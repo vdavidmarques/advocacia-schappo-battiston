@@ -1,0 +1,97 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.footer {
+  background-color: $fColor;
+  color: $white;
+  padding: 2.5rem 1.25rem;
+  
+  &--container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+
+    @media screen and (min-width: $breakpoint-xl) {
+      display: grid;
+      @include grid-cols-12;
+    }
+
+    &--header{
+      row-gap: 1.25rem;
+      @extend %flex-column;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        @include col-span-4;
+      }
+
+      &--branding{
+        a.custom-logo-link{
+          text-align: center;
+          @extend %branding-custom-logo-link;
+        }
+      }
+
+      &--content{
+        line-height: 1.25rem;
+        text-align: center;
+      }
+    }
+
+    &--content{
+      row-gap: 5rem;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        @include col-span-8;
+        @include col-start-6;
+      }
+
+      &--navbar{
+        .main-menu{
+          text-align: center;
+
+          @media screen and (min-width: $breakpoint-xl) {
+            text-align: right;
+          }         
+        }
+      }
+
+      &--contact{
+        a{
+          color: $white;
+        }
+
+        .email{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .contact{          
+          align-items: center;
+          @extend %flex-column;
+        }
+        
+        .social-medias{
+          margin-top: 1.25rem;
+          display: flex;
+          justify-content: center;
+
+          img{
+            width: 2.5rem;
+            height: 2.5rem;
+
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+
+

@@ -1,0 +1,28 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.heading-titles{
+    &--container{
+        display: grid;
+        @include grid-cols-12;
+
+        &--content{
+            text-align: center;
+            @include col-span-12;
+
+            @media screen and (min-width: $breakpoint-xl) {
+                @include col-span-6;
+                text-align: left;
+            }
+            h1,h2,h3,h4,h5{
+                font-size: 1.25rem;
+                font-weight: bold;
+
+                @media screen and (min-width: $breakpoint-xl) {
+                    font-size: 1.875rem;
+                }
+            }
+        }
+    }
+}

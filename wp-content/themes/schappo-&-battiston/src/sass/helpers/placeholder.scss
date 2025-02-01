@@ -1,0 +1,51 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+%menu-item-link-color{
+  color: $white;
+  text-transform: uppercase;
+  
+  &:hover{
+    color: $fColor-light;    
+    text-decoration: underline;
+    @include transition-colors;
+  }
+}
+
+%icons-before{
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%flex-space-between{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+%flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+%branding-custom-logo-link{
+  display: block;
+  height: auto;
+
+  .custom-logo {
+    width: 18.75rem;
+    object-fit: contain;
+  }
+}

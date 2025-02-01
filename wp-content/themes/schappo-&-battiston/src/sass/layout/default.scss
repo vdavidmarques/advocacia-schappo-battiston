@@ -1,0 +1,361 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+@import "../helpers/placeholder";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  outline: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+q {
+  display: inline;
+  font-style: italic;
+}
+
+q:before {
+  content: '"';
+  font-style: normal;
+}
+
+q:after {
+  content: '"';
+  font-style: normal;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="search"],
+input[type="password"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+input[type] {
+  height: 3.4375rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+input[type] {
+  width: 100%;
+  border: 1px solid $gray;
+  padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  margin-bottom: 1.25rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $gray;
+}
+
+.contact-info--form input[type="submit"] {
+  cursor: pointer;
+  width: fit-content;
+  font-weight: bold;
+  background-color: $fColor;
+  color: $white;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: $fColor;
+    @include transition-colors;
+  }
+}
+
+textarea {
+  height: 9.375rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 2px;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  overflow-x: hidden;
+  color: $fColor;
+  margin: 0;
+}
+
+.main {
+  padding: 2.5rem 0;
+  background-color: $sColor;
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 6.25rem 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  @include transition-colors;
+}
+
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: $breakpoint-md;
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: $breakpoint-md;
+  }
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 0 2.5rem;
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    max-width: $breakpoint-xl;
+  }
+  @media screen and (min-width: $breakpoint-1_5xl) {
+    max-width: $breakpoint-2xl;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scroll-effect {
+  opacity: 0;
+  transform: translateY(3.125rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ease-in-out {
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.menu-items {
+
+  a{
+    @extend %menu-item-link-color;
+  }
+  
+  .current-menu-item a{
+    color: $fColor-light;    
+    text-decoration: underline;
+  }
+  
+}
+
+.icon {
+  position: relative;
+  padding-left: 1.875rem;
+
+  &.email {
+    &::before {
+      background-image: url(../../dist/icons/email.svg);
+      @extend %icons-before;
+    }
+
+    &.black::before {
+      background-image: url(../../dist/icons/email-black.svg);
+    }
+  }
+
+  &.whatsapp::before {
+    background-image: url(../../dist/icons/whatsapp.svg);
+    @extend %icons-before;
+  }
+
+  &.phone {
+    &::before {
+      background-image: url(../../dist/icons/phone.svg);
+      @extend %icons-before;
+    }
+
+    &.black::before {
+      background-image: url(../../dist/icons/phone-black.svg);
+    }
+  }
+
+  &.pin {
+    &.black::before {
+      background-image: url(../../dist/icons/pin-black.svg);
+      @extend %icons-before;
+    }
+  }
+
+  &.hour {
+    &.black::before {
+      background-image: url(../../dist/icons/clock-black.svg);
+      @extend %icons-before;
+    }
+  }
+}
