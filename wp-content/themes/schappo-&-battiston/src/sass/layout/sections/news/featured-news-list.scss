@@ -1,0 +1,114 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+.news {
+  &--featured {
+    padding: 2.5rem 0;
+    background-color: $fColor-medium;
+    @media screen and (min-width: $breakpoint-xl) {
+      padding: 6.25rem 0;
+    }
+
+    &--container {
+      &--heading-titles {
+        padding-bottom: 2.5rem;
+
+        @media screen and (min-width: $breakpoint-xl) {
+          padding-bottom: 5rem;
+        }
+      }
+
+      &--post-list {
+        display: grid;
+        @include grid-cols-1;
+        row-gap: 2.5rem;
+        column-gap: 1.25rem;
+
+        @media screen and (min-width: $breakpoint-xl) {
+          @include grid-cols-3;
+        }
+
+        .news-item {
+          .news--container--post-item--thumb {
+            position: relative;
+            height: 18.75rem;
+
+            .bg-dark{
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 49%) 47%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+            
+            .title{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+                padding-bottom: 1.25rem;
+                color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--post-items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.875rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    @media screen and (min-width: $breakpoint-xl) {
+        padding-top: 6.25rem;
+        padding-bottom: 6.25rem;
+    }
+
+    &--item{
+        &--link{
+            display: grid;
+            row-gap: 1.25rem;
+            color: $black;
+            @include grid-cols-12;
+
+            @media screen and (min-width: $breakpoint-xl) {
+                flex-direction: row;
+                column-gap: 1.25rem;
+            }
+
+            &--thumb{
+                height: 15.625rem;
+                @include col-span-12;
+
+                @media screen and (min-width: $breakpoint-xl) {
+                    height: 25rem;
+                    @include col-span-8;
+                }
+            }
+
+            &--content{
+                @include col-span-12;
+                @media screen and (min-width: $breakpoint-xl) {
+                    @include col-span-4;
+                }
+
+                .title{
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    margin-bottom: 0.625rem;
+                    
+                    @media screen and (min-width: $breakpoint-xl) {
+                        font-size: 1.875rem;
+                    }
+                }
+            }
+        }
+    }
+  }
+}
