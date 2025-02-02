@@ -4,7 +4,7 @@
 %menu-item-link-color{
   color: $white;
   text-transform: uppercase;
-  
+
   &:hover{
     color: $fColor-light;    
     text-decoration: underline;
@@ -47,5 +47,32 @@
   .custom-logo {
     width: 18.75rem;
     object-fit: contain;
+  }
+}
+
+%button-default {
+  background-color: $fColor;
+  color: $white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  display: block;
+  margin-top: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  
+  &:hover {
+    background-color: $fColor-light;
+    @include transition-colors;
+  }
+  
+  @media screen and (min-width: $breakpoint-xl) {
+    width: fit-content;
+    font-size: 1.25rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

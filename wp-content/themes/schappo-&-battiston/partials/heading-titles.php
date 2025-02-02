@@ -3,6 +3,8 @@
         $slug = 'contato';
     }elseif(is_archive('equipe')){
         $slug = 'equipe';
+    }elseif(is_page('perguntas-frequentes')){
+        $slug = 'perguntas-frequentes';
     }else{
         $slug = 'pagina-inicial';
     }

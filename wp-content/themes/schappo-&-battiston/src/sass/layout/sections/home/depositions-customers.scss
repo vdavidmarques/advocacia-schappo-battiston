@@ -1,0 +1,74 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+
+.depositions-customers{
+    padding: 2.5rem 0;
+    text-align: center;
+
+    @media screen and (min-width: $breakpoint-xl) {
+        padding: 5rem 0;
+        text-align: left;
+    }
+    
+    &--content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        @media screen and (min-width: $breakpoint-xl) {
+            display: grid;
+            @include grid-cols-12;
+        }
+
+        &--item{
+            @media screen and (min-width: $breakpoint-xl) {
+                @include col-span-10;
+                display: flex;
+                flex-direction: row;
+                column-gap: 1.875rem;
+                align-items: center;
+            }
+
+            &--image{
+                @media screen and (min-width: $breakpoint-xl) {
+                    
+                }
+                .wp-post-image{
+                    width: 12.5rem;
+                    height: 12.5rem;
+                    object-fit: cover;
+                }
+
+            }
+
+            &--content{
+
+                .title{
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                }
+    
+                p{
+                    line-height: 1.25rem;
+                }
+            }
+
+            &.right{
+                @media screen and (min-width: $breakpoint-xl) {
+                    flex-direction: row-reverse;
+                    @include col-start-3;
+    
+                    .depositions-customers--content--item--content{
+                        text-align: right;
+                    }
+                }
+            }
+    
+        }
+    }
+
+    .dot-block{
+        margin-top: 2.5rem;
+    }
+}

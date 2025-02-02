@@ -16,13 +16,20 @@
                 text-align: left;
             }
             h1,h2,h3,h4,h5{
-                font-size: 1.25rem;
+                font-size: 1.5625rem;
                 font-weight: bold;
 
                 @media screen and (min-width: $breakpoint-xl) {
-                    font-size: 1.875rem;
+                    font-size: 30px;
                 }
             }
         }
+    }
+}
+
+.home .heading-titles{
+    margin-top: 1.25rem;
+    @media screen and (min-width: $breakpoint-xl) {
+        margin-top: 3.75rem;
     }
 }

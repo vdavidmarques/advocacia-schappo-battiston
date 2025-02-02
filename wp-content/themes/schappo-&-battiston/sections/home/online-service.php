@@ -26,7 +26,7 @@
                 </div>
                 <div class="online-service--container--list--item--content">
                     <?php echo $contentService1; ?>
-                    <a href="<?php echo $buttonService1['url']; ?>" target="_blank"><?php echo $buttonService1['title']; ?></a>
+                    <a href="<?php echo $buttonService1['url']; ?>" target="<?php echo $buttonService1['target']; ?>" class="link"><?php echo $buttonService1['title']; ?></a>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
                 </div>
                 <div class="online-service--container--list--item--content">
                     <?php echo $contentService2; ?>
-                    <a href="<?php echo $buttonService2['url']; ?>" target="_blank"><?php echo $buttonService2['title']; ?></a>
+                    <a href="<?php echo $buttonService2['url']; ?>" target="<?php echo $buttonService2['target'] ?> " class="link"><?php echo $buttonService2['title']; ?></a>
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="online-service--container--list--item--content">
                     <?php echo $contentService3; ?>
-                    <a href="<?php echo $buttonService3['url']; ?>" target="_blank"><?php echo $buttonService3['title']; ?></a>
+                    <a href="<?php echo $buttonService3['url']; ?>" target="<?php echo $buttonService3['target']  ?> " class="link"><?php echo $buttonService3['title']; ?></a>
                 </div>
             </div>
         </div>

@@ -14,8 +14,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <header class="header" role="banner">
+    <?php 
+        wp_body_open(); 
+        if(is_front_page()){
+            $fColor = '';
+        }else{
+            $fColor = 'background-color: #071010;';
+        }
+    ?>
+    <header class="header" role="banner" style="<?php echo $fColor; ?>">
         <?php
         $args = array(
             'name' => 'informacoes-gerais',
@@ -120,5 +127,5 @@
                 </div>
             </div>
     </header>
-    <main role="main" class="main">
-        <div class="container">
+    <main role="main">
+       

@@ -1,4 +1,3 @@
-</div>
 </main>
 <footer class="footer" role="contentinfo">
     <div class="container footer--container">

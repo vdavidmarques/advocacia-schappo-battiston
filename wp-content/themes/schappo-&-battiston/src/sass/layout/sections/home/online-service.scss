@@ -1,0 +1,55 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+.online-service{
+
+    &--container{
+
+        &--header{
+            margin-bottom: 0.625rem;
+
+            h1,h2,h3,h4,h5{
+                font-size: 1.5625rem;
+                font-weight: bold;
+
+                @media screen and (min-width: $breakpoint-xl) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        &--list{
+            display: grid;
+            @include grid-cols-1;
+            row-gap: 1.25rem;
+
+            @media screen and (min-width: $breakpoint-xl) {
+                @include grid-cols-3;
+                column-gap: 1.25rem;
+            }
+
+            &--item{
+                padding: 2.5rem 1.25rem 1.25rem 1.25rem;
+                border: 1px solid $gray;
+                border-radius: 0.5rem;
+
+                &--image img{
+                    height: 17.1875rem;
+                }
+
+                &--content{
+                    h1,h2,h3,h4,h5{
+                        font-weight: bold;
+                        font-size: 1.125rem;
+                    }
+
+                    .link{
+                        width: 100%;
+                        @extend %button-default;
+                    }
+                }
+            }
+        }
+    }
+}
