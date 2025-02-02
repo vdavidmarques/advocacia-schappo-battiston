@@ -3,6 +3,11 @@
 @import "../helpers/placeholder.scss";
 
 .heading-titles{
+    padding-top: 2.5rem;
+    @media screen and (min-width: $breakpoint-xl) {
+        padding-top: 6.25rem;
+    }
+
     &--container{
         display: grid;
         @include grid-cols-12;
@@ -29,6 +34,8 @@
 
 .home .heading-titles{
     margin-top: 1.25rem;
+    padding-top: 0;
+
     @media screen and (min-width: $breakpoint-xl) {
         margin-top: 3.75rem;
     }

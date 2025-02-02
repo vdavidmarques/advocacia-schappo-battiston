@@ -1,0 +1,56 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+.areas-of-activity {
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+  @media screen and (min-width: $breakpoint-xl) {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+  }
+
+  &--container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @media screen and (min-width: $breakpoint-xl) {
+        row-gap: 5rem;
+    }
+
+    &--content{
+        @media screen and (min-width: $breakpoint-xl) {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1.25rem;
+            align-items: center;
+        }
+
+        &.right{
+            @media screen and (min-width: $breakpoint-xl) {
+                flex-direction: row-reverse;
+    
+                .areas-of-activity--container--content--text{
+                    text-align: right;
+                }
+            }
+
+        }
+
+        &--text{
+            display: flex;
+            flex-direction: column;
+
+            .title{
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+
+            p{
+                line-height: 1.25rem;
+            }
+        }
+    }
+  }
+}
