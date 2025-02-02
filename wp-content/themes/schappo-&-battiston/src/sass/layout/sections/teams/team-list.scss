@@ -1,0 +1,45 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+.team-list{
+    &--content{
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        display: grid;
+        @include grid-cols-1;
+        row-gap: 2.5rem;
+        column-gap: 2.5rem;
+
+        @media screen and (min-width: $breakpoint-xl) {
+            @include grid-cols-3;
+            padding-top: 6.25rem;
+            padding-bottom: 6.25rem;
+        }
+
+        &--text{
+            .title{
+                font-weight: bold;
+                font-size: 1.25rem;
+                margin-bottom: 0.625rem;
+            }
+
+            .thumb{
+                position: relative;
+
+                .wp-post-image{
+                    filter: grayscale(100%);
+                }
+
+                .content{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding: 9.375rem 1.25rem 1.25rem;
+                    color: $white;
+                    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+                }
+            }
+        }
+    }
+}
