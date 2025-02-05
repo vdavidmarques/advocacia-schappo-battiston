@@ -1,0 +1,47 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.single-post-page{
+    display: grid;
+    column-gap: 2.5rem;
+    row-gap: 2.5rem;
+    padding: 2.5rem 0;
+    @include grid-cols-12;
+
+    @media (min-width: $breakpoint-xl){
+        padding: 6.25rem 0;
+    }
+
+    &--thumb{
+        @include col-span-12;
+
+        @media (min-width: $breakpoint-xl){
+            @include col-span-5;
+        }
+    }
+
+    &--content{
+        @include col-span-12;
+
+        @media (min-width: $breakpoint-xl){
+            @include col-span-7;
+        }
+
+        .title{
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+
+            @media (min-width: $breakpoint-xl){
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+                
+            }
+        }
+
+        p{
+            line-height: 1.5rem;
+        }
+    }
+}

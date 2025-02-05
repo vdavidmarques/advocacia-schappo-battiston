@@ -392,3 +392,35 @@ img {
     padding-top: 2.5rem;
   }
 }
+
+.page-404{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+  height: 100vh;
+  max-height: 37.5rem;
+
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 6.25rem 0;
+  }
+  h1{
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    @media screen and (min-width: $breakpoint-xl) {
+      font-size: 1.875rem;
+    }
+  }
+
+  .button{
+    background-color: $fColor;
+    color: $white;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+  }
+}
