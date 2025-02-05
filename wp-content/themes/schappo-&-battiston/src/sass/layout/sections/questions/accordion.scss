@@ -1,0 +1,56 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+.question-list {
+  .accordion {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+
+    &.active .accordion-header {
+      background-color: #f0f0f0;
+    }
+
+    .accordion-header {
+      padding: 0.9375rem;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+
+      &::after {
+        content: '';
+        background-image: url('../icons/arrow-right.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 0.9375rem;
+        height: 0.9375rem;
+        float: right;
+        transition: transform 0.3s ease-out;
+        position: absolute;
+        right: 1.875rem;
+        top: 0;
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &.active .accordion-header::after {
+        transform: rotate(90deg);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 0.9375rem;
+
+      p {
+        margin-top: 0;
+        padding-top: 0.9375rem;
+        padding-bottom: 0.9375rem;
+      }
+    }
+  }
+}

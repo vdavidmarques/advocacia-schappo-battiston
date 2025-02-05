@@ -26,10 +26,7 @@
 
             .thumb{
                 position: relative;
-
-                .wp-post-image{
-                    filter: grayscale(100%);
-                }
+                filter: grayscale(100%);
 
                 .content{
                     position: absolute;

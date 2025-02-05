@@ -118,4 +118,43 @@ function registrar_cliente_custom_post() {
     register_post_type( 'cliente', $args );
 }
 add_action( 'init', 'registrar_cliente_custom_post' );
+
+// Registrar Custom Post Type pergunta
+function registrar_perguntas_custom_post() {
+    $labels = array(
+        'name'               => 'Perguntas Frequentes',
+        'singular_name'      => 'Pergunta Frequente',
+        'menu_name'          => 'Perguntas Frequentes',
+        'name_admin_bar'     => 'Pergunta Frequente',
+        'add_new'            => 'Adicionar Pergunta',
+        'add_new_item'       => 'Adicionar Nova pergunta',
+        'new_item'           => 'Nova pergunta',
+        'edit_item'          => 'Editar pergunta',
+        'view_item'          => 'Ver pergunta',
+        'all_items'          => 'Todas as perguntas',
+        'search_items'       => 'Pesquisar perguntas',
+        'parent_item_colon'  => 'pergunta Pai:',
+        'not_found'          => 'Nenhum pergunta encontrada.',
+        'not_found_in_trash' => 'Nenhum pergunta encontrada na lixeira.'
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'perguntas-frequentes' ), 
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array( 'title', 'editor'), 
+        'menu_icon'          => 'dashicons-info-outline'
+    );
+
+    register_post_type( 'perguntas-frequentes', $args );
+}
+add_action( 'init', 'registrar_perguntas_custom_post' );
 ?>

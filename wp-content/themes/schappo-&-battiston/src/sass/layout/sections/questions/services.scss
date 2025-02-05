@@ -1,0 +1,84 @@
+@import "../../../helpers/variables";
+@import "../../../helpers/mixins";
+@import "../../../helpers/placeholder";
+
+.our-service {
+    padding-bottom: 2.5rem;
+    @media screen and (min-width: $breakpoint-xl) {
+        padding-bottom: 100px;
+    }
+
+  &--header {
+    padding-top: 2.5rem;
+    padding-bottom: 3.75rem;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        font-size: 1.875rem;
+      }
+    }
+  }
+
+  &--lists {
+    display: grid;
+    @include grid-cols-1;
+    row-gap: 1.25rem;
+
+    @media screen and (min-width: $breakpoint-xl) {
+      @include grid-cols-3;
+      column-gap: 1.25rem;
+    }
+
+    &--list {
+      padding: 0.625rem;
+      border: 1px solid $gray;
+      border-radius: 0.5rem;
+
+      &--photo {
+        height: 15.625rem;
+        @media screen and (min-width: $breakpoint-xl) {
+          height: 18.75rem;
+        }
+      }
+
+      &--content {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          font-weight: bold;
+          font-size: 1.125rem;
+          
+          @media screen and (min-width: $breakpoint-xl) {
+            font-size: 1.25rem;
+          }
+        }
+      }
+
+      &--button{
+        background-color: $fColor;
+        color: $white;
+        padding: 0.625rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        display: block;
+        width: fit-content;
+        margin-top: 2.5rem;
+
+        &:hover{
+            background-color: $fColor-light;
+            @include transition-colors;
+        }
+      }
+    }
+  }
+}

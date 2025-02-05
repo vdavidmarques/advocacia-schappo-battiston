@@ -40,3 +40,10 @@
         margin-top: 3.75rem;
     }
 }
+
+.faq .heading-titles{
+    padding-bottom: 2.5rem;
+    @media screen and (min-width: $breakpoint-xl) {
+        padding-bottom: 6.25rem;
+    }
+}
