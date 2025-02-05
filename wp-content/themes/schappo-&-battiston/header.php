@@ -55,15 +55,21 @@
                         </a>
                     </div>
                     <div class="header--container--before--social-medias">
+                        <?php if($instagram): ?>
                         <a target="_blank" href="<?php echo $instagram ?>" class="top-icon">
                             <img src="<?php echo get_template_directory_uri() . '/dist/icons/instagram.svg' ?>" alt="instagram">
                         </a>
+                        <?php endif; ?>
+                        <?php if($facebook): ?>
                         <a target="_blank" href="<?php echo $facebook ?>" class="top-icon">
                             <img src="<?php echo get_template_directory_uri() . '/dist/icons/facebook.svg' ?>" alt="facebook">
                         </a>
+                        <?php endif; ?>
+                        <?php if($linkedin): ?>
                         <a target="_blank" href="<?php echo $linkedin ?>" class="top-icon">
                             <img src="<?php echo get_template_directory_uri() . '/dist/icons/linkedin.svg' ?>" alt="linkedin">
                         </a>
+                        <?php endif; ?>
                     </div>
                     <div class="header--container--before--contact">
                         <a href="tel:<?php echo $phone ?>" class="icon phone">

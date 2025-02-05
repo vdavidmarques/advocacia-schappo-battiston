@@ -25,6 +25,7 @@
                     $email = get_field('e-mail');
                     $instagram = get_field('instagram');
                     $facebook = get_field('facebook');
+                    $linkedin = get_field('linkedin');
                     $address = get_field('address');
                     $phone = get_field('phone');
                     $content = get_field('title-budget');
@@ -67,15 +68,21 @@
                 </div>
 
                 <div class="social-medias">
+                    <?php if($instagram): ?>
                     <a target="_blank" href="<?php echo $instagram ?>" class="top-icon">
                         <img src="<?php echo get_template_directory_uri() . '/dist/icons/instagram.svg' ?>" alt="instagram">
                     </a>
+                    <?php endif; ?>
+                    <?php if($facebook): ?>
                     <a target="_blank" href="<?php echo $facebook ?>" class="top-icon">
                         <img src="<?php echo get_template_directory_uri() . '/dist/icons/facebook.svg' ?>" alt="facebook">
                     </a>
+                    <?php endif; ?>
+                    <?php if($linkedin): ?>
                     <a target="_blank" href="<?php echo $linkedin ?>" class="top-icon">
                         <img src="<?php echo get_template_directory_uri() . '/dist/icons/linkedin.svg' ?>" alt="linkedin">
                     </a>
+                    <?php endif; ?>
                 </div>
                
             </div>
@@ -85,6 +92,11 @@
 
 </footer>
 <?php wp_footer(); ?>
+
+<?php if(is_archive('perguntas-frequentes') ){ ?>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/dist/js/accordion.js" defer></script>
+<?php } ?>
+
 </body>
 
 </html>

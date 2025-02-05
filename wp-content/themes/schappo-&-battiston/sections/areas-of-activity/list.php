@@ -22,8 +22,11 @@
 
                     <div class="areas-of-activity--container--content <?php echo $class; ?>">
                         <?php
+                        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
                         if (has_post_thumbnail()) {
-                            the_post_thumbnail('medium');
+                            if ( ! empty( $large_image_url[0] ) ) {
+                                echo '<img src="' . esc_url( $large_image_url[0] ) . '" alt="' . the_title_attribute(array('echo' => false) ) . '" />';
+                            }
                         }
                         echo '<div class="areas-of-activity--container--content--text">';
                         the_title('<h3 class="title">', '</h3>');
